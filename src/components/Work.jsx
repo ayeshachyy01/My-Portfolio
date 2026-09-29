@@ -9,8 +9,11 @@ function Work({ onClose }) {
                 <div className="work-card">
                     <h3>Bluetooth Controlled Car</h3>
                     <p>
-                        An Arduino-based car controlled wirelessly using
-                        Bluetooth, allowing the car to move in different directions.
+                           An Arduino-based car programmed in C++ & controlled
+                           wirelessly by a Bluetooth module, allowing the
+                           car to move in different directions.
+                        <p>
+</p>
                     </p>
                 </div>
 
