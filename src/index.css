@@ -269,6 +269,7 @@ body {
 .panel h2 {
     font-size: 28px;
     margin-bottom: 15px;
+    padding-right: 45px;
     color: #000000;
 }
 
@@ -465,6 +466,12 @@ body {
         width: 90%;
         padding: 30px 20px;
     }
+    .panel h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        padding-right: 45px;
+        color: #000000;
+}
     .skills-grid {
         grid-template-columns: 1fr;
         gap: 12px;
