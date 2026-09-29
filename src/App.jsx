@@ -16,6 +16,16 @@ function App() {
             />
 
             <main className="profile">
+                <div className="particles">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <img
                     src="/Ayeshaprofile.png"
                     alt="Ayesha Choudhury"
