@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Skills from './components/Skills'
 import Work from './components/Work'
+import Education from './components/Education'
 import Contact from './components/Contact'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
                 onSkillsClick={() => setActivePanel('skills')}
                 onWorkClick={() => setActivePanel('work')}
                 onContactClick={() => setActivePanel('contact')}
+                 onEducationClick={() => setActivePanel('education')}
             />
 
             <main className="profile">
@@ -45,11 +47,12 @@ function App() {
             {activePanel === 'skills' && (
                 <Skills onClose={() => setActivePanel(null)} />
             )}
-
             {activePanel === 'work' && (
                 <Work onClose={() => setActivePanel(null)} />
             )}
-
+            {activePanel === 'education' && (
+                <Education onClose={() => setActivePanel(null)} />
+            )}
             {activePanel === 'contact' && (
                 <Contact onClose={() => setActivePanel(null)} />
             )}
