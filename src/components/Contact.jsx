@@ -3,7 +3,11 @@ function Contact({ onClose }) {
         <div className="panel">
             <button onClick={onClose}>✕</button>
 
-            <h2>Contact Me</h2>
+            <h2>Let's Connect & Create!</h2>
+
+            <p className="contact-text">
+                Feel free to reach out if you'd like to connect or work on something together.
+            </p>
 
             <p className="email">
                 Email: <a href="mailto:ayeshachyy01@gmail.com">ayeshachyy01@gmail.com</a>
