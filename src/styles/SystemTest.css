@@ -1,0 +1,576 @@
+/* =========================================================
+   SECOND HOLOGRAM SECTION
+========================================================= */
+
+.reaction-screen {
+    flex-direction: column;
+
+    gap: 50px;
+
+    padding-top: 130px;
+}
+
+.second-hologram-area {
+    position: relative;
+
+    width: 700px;
+    height: 260px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   SECOND HOLOGRAM ROBOT
+   Movement is controlled by React.
+========================================================= */
+
+.second-hologram {
+    position: absolute;
+
+    left: 120px;
+
+    width: 170px;
+    height: 230px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    opacity: 0.9;
+
+    filter:
+        drop-shadow(0 0 12px rgba(200, 182, 232, 0.5));
+
+    transition:
+        transform 0.12s ease-out;
+
+    animation: none;
+}
+
+
+/* =========================================================
+   SECOND ROBOT BOW
+========================================================= */
+
+.robot-bow {
+    position: absolute;
+
+    top: -3px;
+    right: 34px;
+
+    width: 43px;
+    height: 24px;
+
+    z-index: 3;
+    transform:
+        rotate(20deg);
+}
+
+.bow-left,
+.bow-right {
+    position: absolute;
+
+    top: 4px;
+
+    width: 19px;
+    height: 15px;
+
+    border:
+        2px solid #e9a7d4;
+
+    box-shadow:
+        0 0 7px rgba(233, 167, 212, 0.55);
+}
+
+.bow-left {
+    left: 0;
+
+    border-radius:
+        60% 30% 60% 30%;
+
+    transform:
+        rotate(90deg);
+}
+
+.bow-right {
+    right: 0;
+
+    border-radius:
+        30% 60% 30% 60%;
+
+    transform:
+        rotate(-90deg);
+}
+
+.bow-center {
+    position: absolute;
+
+    top: 6px;
+    left: 16px;
+
+    width: 11px;
+    height: 11px;
+
+    border:
+        2px solid #e9a7d4;
+
+    border-radius: 50%;
+
+    background: #050608;
+
+    box-shadow:
+        0 0 8px #e9a7d4;
+}
+
+/* =========================================================
+   ROBOT BLUSH
+========================================================= */
+
+.robot-blush {
+    position: absolute;
+
+    width: 18px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 120, 170, 0.6);
+
+    filter:
+        blur(2.5px);
+
+    opacity: 0.8;
+}
+
+.left-blush {
+    left: 4px;
+    top: 33px;
+}
+
+.right-blush {
+    right: 4px;
+    top: 33px;
+}
+
+
+/* =========================================================
+   SECOND ROBOT SKIRT
+========================================================= */
+
+.robot-skirt {
+    display: flex;
+
+    gap: 3px;
+
+    margin-top: 8px;
+}
+
+.robot-skirt div {
+    width: 28px;
+    height: 35px;
+
+    border:
+        1px solid #c8b6e8;
+
+    clip-path:
+        polygon(20% 0,
+            80% 0,
+            100% 100%,
+            0 100%);
+
+    box-shadow:
+        0 0 8px rgba(200, 182, 232, 0.2);
+}
+
+
+/* =========================================================
+   SECOND ROBOT MESSAGE
+========================================================= */
+
+.second-message {
+    position: absolute;
+
+    left: calc(50% + 120px);
+
+    top: 35px;
+
+    width: 250px;
+}
+
+
+/* =========================================================
+   REACTION TEST PANEL
+========================================================= */
+
+.reaction-panel {
+    width: min(760px, 90%);
+
+    background:
+        rgba(8, 9, 12, 0.96);
+
+    border:
+        1px solid rgba(200, 182, 232, 0.35);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.reaction-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 15px 20px;
+
+    border-bottom:
+        1px solid rgba(200, 182, 232, 0.15);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+.reaction-content {
+    padding: 25px;
+}
+
+.reaction-status {
+    margin-bottom: 15px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: #c8b6e8;
+}
+
+
+/* =========================================================
+   REACTION GAME AREA
+========================================================= */
+
+.reaction-box {
+    position: relative;
+
+    width: 100%;
+    height: 260px;
+
+    border:
+        1px solid rgba(200, 182, 232, 0.18);
+
+    background:
+        linear-gradient(rgba(200, 182, 232, 0.025) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(200, 182, 232, 0.025) 1px,
+            transparent 1px);
+
+    background-size: 30px 30px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   REACTION GAME BUTTON
+========================================================= */
+
+.reaction-start {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    padding: 14px 25px;
+
+    background: transparent;
+
+    border:
+        1px solid #c8b6e8;
+
+    color: #c8b6e8;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.reaction-start:hover {
+    background: #c8b6e8;
+
+    color: #050608;
+
+    box-shadow:
+        0 0 20px rgba(200, 182, 232, 0.4);
+}
+
+
+/* =========================================================
+   WAITING STATE
+========================================================= */
+
+.waiting-message {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    text-align: center;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #777;
+}
+
+.loading-dots {
+    margin-top: 10px;
+
+    color: #c8b6e8;
+
+    animation:
+        dotsPulse 1s infinite;
+}
+
+@keyframes dotsPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   REACTION TARGET
+========================================================= */
+
+.reaction-target {
+    position: absolute;
+
+    width: 42px;
+    height: 42px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid #c8b6e8;
+
+    background:
+        rgba(200, 182, 232, 0.08);
+
+    color: #c8b6e8;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 20px;
+
+    cursor: crosshair;
+
+    box-shadow:
+        0 0 15px rgba(200, 182, 232, 0.4);
+
+    animation:
+        targetAppear 0.2s ease;
+}
+
+.reaction-target:hover {
+    background:
+        rgba(200, 182, 232, 0.25);
+
+    box-shadow:
+        0 0 25px rgba(200, 182, 232, 0.7);
+}
+
+@keyframes targetAppear {
+    from {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%) scale(1);
+    }
+}
+
+
+/* =========================================================
+   REACTION RESULT
+========================================================= */
+
+.reaction-result {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    width: 100%;
+    height: 100%;
+}
+
+.result-label {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #666;
+}
+
+.result-time {
+    margin: 12px 0;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    color: #c8b6e8;
+
+    text-shadow:
+        0 0 15px rgba(200, 182, 232, 0.4);
+}
+
+.result-status {
+    margin-bottom: 20px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   RETRY BUTTON INSIDE RESULT
+========================================================= */
+
+.reaction-result .reaction-start {
+    position: static;
+
+    transform: none;
+
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   SYSTEM TEST RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .second-hologram {
+        left: 100px;
+    }
+
+    .second-message {
+        left: calc(50% + 100px);
+
+        width: 235px;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .second-hologram-area {
+        width: 100%;
+    }
+
+    .second-hologram {
+        left: 10%;
+    }
+
+    .second-message {
+        left: calc(50% + 80px);
+
+        width: 220px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .reaction-screen {
+        gap: 30px;
+
+        padding-top: 100px;
+    }
+
+    .second-hologram-area {
+        height: 400px;
+
+        transform:
+            scale(0.8);
+    }
+
+    .second-hologram {
+        left: 25%;
+    }
+
+    .second-message {
+        left: 50%;
+
+        top: 220px;
+
+        width: 240px;
+
+        /* Do not use transform here.
+           React controls the robot transform. */
+    }
+
+
+    /* Reaction game */
+
+    .reaction-panel {
+        width: 95%;
+    }
+
+    .reaction-content {
+        padding: 15px;
+    }
+
+    .reaction-box {
+        height: 220px;
+    }
+
+}

@@ -1,0 +1,377 @@
+/* =========================================================
+   START SCREEN
+========================================================= */
+
+.start-screen {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(200, 182, 232, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(200, 182, 232, 0.025) 1px,
+            transparent 1px
+        ),
+        #050608;
+
+    background-size: 45px 45px;
+
+    color: #c8b6e8;
+}
+
+.start-content {
+    width: 500px;
+
+    text-align: center;
+}
+
+.start-code {
+    margin-bottom: 25px;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: #666;
+}
+
+.start-content h1 {
+    margin: 0;
+
+    font-size: 80px;
+    letter-spacing: 18px;
+}
+
+.start-content p {
+    margin-top: 10px;
+
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    color: #777;
+}
+
+.start-line {
+    width: 100%;
+    height: 1px;
+
+    margin: 40px 0;
+
+    background: rgba(200, 182, 232, 0.25);
+}
+
+.start-button {
+    padding: 16px 35px;
+
+    background: transparent;
+
+    border: 1px solid #c8b6e8;
+
+    color: #c8b6e8;
+
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.start-button:hover {
+    background: #c8b6e8;
+
+    color: #050608;
+
+    box-shadow:
+        0 0 25px rgba(200, 182, 232, 0.3);
+}
+
+.start-hint {
+    margin-top: 18px;
+
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: #444;
+}
+
+
+/* =========================================================
+   MAIN OPERATING SYSTEM
+========================================================= */
+
+.os {
+    min-height: 100vh;
+
+    background: #050608;
+
+    color: #c8b6e8;
+}
+
+.os-screen {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 40px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+.content-screen {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 40px;
+
+    border-top:
+        1px solid rgba(200, 182, 232, 0.12);
+}
+
+.content-screen:nth-child(even) {
+    background: #07080b;
+}
+
+.section-number {
+    position: absolute;
+
+    top: 40px;
+    left: 40px;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   CONTENT PANELS
+========================================================= */
+
+.content-panel {
+    position: relative;
+
+    width: min(700px, 90%);
+
+    padding: 45px;
+
+    background:
+        rgba(8, 9, 12, 0.94);
+
+    border:
+        1px solid rgba(200, 182, 232, 0.35);
+
+    transform:
+        translateY(50px)
+        scale(0.97);
+
+    opacity: 0;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease;
+
+    box-shadow:
+        0 0 0 1px rgba(200, 182, 232, 0.03),
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.section-visible .content-panel {
+    transform:
+        translateY(0)
+        scale(1);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PANEL CORNER DETAILS
+========================================================= */
+
+.content-panel::before,
+.content-panel::after {
+    content: "";
+
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    border-color: #c8b6e8;
+}
+
+.content-panel::before {
+    top: -1px;
+    left: -1px;
+
+    border-top: 1px solid;
+    border-left: 1px solid;
+}
+
+.content-panel::after {
+    right: -1px;
+    bottom: -1px;
+
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.panel-label {
+    margin-bottom: 15px;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: #666;
+}
+
+.content-panel h2 {
+    margin-bottom: 25px;
+
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+
+.content-panel p {
+    color: #999;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .taskbar-nav {
+        gap: 12px;
+    }
+
+    .taskbar-nav a {
+        font-size: 8px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    /* Taskbar */
+
+    .taskbar {
+        padding: 0 12px;
+    }
+
+    .taskbar-system {
+        display: none;
+    }
+
+    .taskbar-nav {
+        gap: 9px;
+    }
+
+    .taskbar-nav a {
+        font-size: 7.5px;
+
+        letter-spacing: 1px;
+    }
+
+    .taskbar-right {
+        font-size: 8px;
+    }
+
+
+    /* Panels */
+
+    .content-panel {
+        padding: 30px;
+    }
+
+    .content-panel h2 {
+        font-size: 22px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .os-screen {
+        padding:
+            25px 15px 80px;
+    }
+
+
+    /* Content */
+
+    .section-number {
+        top: 25px;
+        left: 20px;
+
+        font-size: 8px;
+    }
+
+    .content-panel {
+        width: 95%;
+
+        padding: 25px;
+    }
+
+    .content-panel h2 {
+        font-size: 18px;
+
+        letter-spacing: 3px;
+    }
+
+
+    /* Taskbar */
+
+    .taskbar {
+        height: 50px;
+
+        padding: 0 8px;
+    }
+
+    .taskbar-logo {
+        width: 23px;
+        height: 23px;
+    }
+
+    .taskbar-nav {
+        gap: 6px;
+    }
+
+    .taskbar-nav a {
+        font-size: 6.5px;
+
+        letter-spacing: 0.6px;
+    }
+
+    .taskbar-nav a::before {
+        display: none;
+    }
+
+    .taskbar-right {
+        display: none;
+    }
+}

@@ -1,0 +1,77 @@
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-screen {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   EDUCATION CARDS
+========================================================= */
+
+.education-card {
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 10px;
+    padding: 15px;
+
+    border:
+        1px solid rgba(200, 182, 232, 0.15);
+
+    background:
+        rgba(200, 182, 232, 0.04);
+
+    transition: 0.25s;
+}
+
+.education-card:hover {
+    border-color: #c8b6e8;
+
+    transform:
+        translateX(6px);
+
+    box-shadow:
+        -4px 0 0 rgba(200, 182, 232, 0.2);
+}
+
+
+/* =========================================================
+   EDUCATION INFORMATION
+========================================================= */
+
+.education-info h3 {
+    margin: 0 0 6px;
+
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.education-institution {
+    margin: 0;
+
+    color: #c8b6e8;
+
+    font-family: monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .education-card {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,821 @@
+/* =========================================================
+   HOME SCREEN
+========================================================= */
+
+.home-screen {
+    display: block;
+}
+
+
+/* =========================================================
+   TECHNICAL GRID BACKGROUND
+========================================================= */
+
+.grid-background {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(200, 182, 232, 0.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(200, 182, 232, 0.04) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SYSTEM HEADER
+========================================================= */
+
+.system-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 35px;
+}
+
+.system-name {
+    font-size: 28px;
+    font-weight: bold;
+
+    letter-spacing: 8px;
+}
+
+.system-subtitle {
+    margin-top: 5px;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: #777;
+}
+
+.system-status {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #c8b6e8;
+
+    box-shadow:
+        0 0 10px #c8b6e8;
+
+    animation:
+        statusBlink 2s infinite;
+}
+
+@keyframes statusBlink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+}
+
+
+/* =========================================================
+   USER SYSTEM INFORMATION
+========================================================= */
+
+.system-info {
+    position: absolute;
+
+    top: 135px;
+    left: 35px;
+
+    font-size: 10px;
+    line-height: 1.9;
+
+    letter-spacing: 1px;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   FIRST HOLOGRAM AREA
+========================================================= */
+
+.hologram-area {
+    position: absolute;
+
+    top: 110px;
+    left: 50%;
+
+    width: 760px;
+    height: 230px;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   FIRST HOLOGRAM ROBOT
+   Movement is controlled by React.
+========================================================= */
+
+.hologram {
+    position: absolute;
+
+    top: 0;
+    left: 150px;
+
+    width: 170px;
+    height: 220px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    opacity: 0.9;
+
+    filter:
+        drop-shadow(
+            0 0 12px rgba(200, 182, 232, 0.45)
+        );
+
+    transition:
+        transform 0.12s ease-out;
+
+    animation: none;
+}
+
+
+/* =========================================================
+   ROBOT HEAD
+========================================================= */
+
+.robot-head {
+    position: relative;
+
+    width: 65px;
+    height: 55px;
+
+    border: 2px solid #c8b6e8;
+
+    clip-path:
+        polygon(
+            15% 0,
+            85% 0,
+            100% 25%,
+            90% 100%,
+            10% 100%,
+            0 25%
+        );
+}
+
+
+/* =========================================================
+   ROBOT EYES
+========================================================= */
+
+.robot-eye {
+    position: absolute;
+
+    top: 22px;
+
+    width: 8px;
+    height: 8px;
+
+    background: #c8b6e8;
+
+    box-shadow:
+        0 0 12px #c8b6e8;
+
+    transition:
+        transform 0.08s ease-out;
+}
+
+.left-eye {
+    left: 17px;
+}
+
+.right-eye {
+    right: 17px;
+}
+
+
+/* =========================================================
+   ROBOT BODY
+========================================================= */
+
+.robot-body {
+    position: relative;
+
+    width: 100px;
+    height: 95px;
+
+    margin-top: 8px;
+
+    border: 2px solid #c8b6e8;
+
+    clip-path:
+        polygon(
+            20% 0,
+            80% 0,
+            100% 20%,
+            90% 100%,
+            10% 100%,
+            0 20%
+        );
+}
+
+
+/* =========================================================
+   ROBOT CORE
+========================================================= */
+
+.robot-core {
+    position: absolute;
+
+    top: 30px;
+    left: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    transform: translateX(-50%);
+
+    border:
+        2px solid #c8b6e8;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px #c8b6e8,
+        inset 0 0 8px rgba(200, 182, 232, 0.5);
+
+    animation:
+        corePulse 1.5s infinite;
+}
+
+@keyframes corePulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 8px #c8b6e8,
+            inset 0 0 6px rgba(200, 182, 232, 0.4);
+    }
+
+    50% {
+        box-shadow:
+            0 0 20px #c8b6e8,
+            inset 0 0 12px rgba(200, 182, 232, 0.8);
+    }
+}
+
+
+/* =========================================================
+   ROBOT INTERNAL LINES
+========================================================= */
+
+.robot-line {
+    position: absolute;
+
+    left: 15px;
+
+    width: 70px;
+    height: 1px;
+
+    background:
+        rgba(200, 182, 232, 0.5);
+}
+
+.line-one {
+    top: 15px;
+}
+
+.line-two {
+    bottom: 18px;
+}
+
+
+/* =========================================================
+   ROBOT BASE
+========================================================= */
+
+.robot-base {
+    width: 75px;
+    height: 10px;
+
+    margin-top: 10px;
+
+    border:
+        1px solid #c8b6e8;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   HOLOGRAM RING
+========================================================= */
+
+.hologram-ring {
+    position: absolute;
+
+    bottom: -15px;
+
+    width: 140px;
+    height: 25px;
+
+    border:
+        1px solid rgba(200, 182, 232, 0.6);
+
+    border-radius: 50%;
+
+    animation:
+        ringPulse 2s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+    0%,
+    100% {
+        opacity: 0.4;
+
+        transform:
+            scaleX(0.9);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scaleX(1.05);
+    }
+}
+
+
+/* =========================================================
+   HOLOGRAM MESSAGE BOX
+========================================================= */
+
+.robot-message {
+    position: absolute;
+
+    top: 5px;
+    right: 20px;
+
+    width: 220px;
+    min-height: 90px;
+
+    padding: 11px 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(200, 182, 232, 0.06),
+            rgba(5, 6, 8, 0.94)
+        );
+
+    border:
+        1px solid rgba(200, 182, 232, 0.45);
+
+    box-shadow:
+        0 0 20px rgba(200, 182, 232, 0.08),
+        inset 0 0 15px rgba(200, 182, 232, 0.02);
+
+    backdrop-filter: blur(6px);
+
+    animation:
+        messageFloat 3s ease-in-out infinite;
+}
+
+.robot-message::before {
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: 15px;
+
+    width: 30px;
+    height: 2px;
+
+    background: #c8b6e8;
+
+    box-shadow:
+        0 0 10px #c8b6e8;
+}
+
+.robot-message::after {
+    content: "";
+
+    position: absolute;
+
+    left: -15px;
+    top: 32px;
+
+    width: 15px;
+    height: 1px;
+
+    background:
+        rgba(200, 182, 232, 0.5);
+
+    box-shadow:
+        0 0 8px rgba(200, 182, 232, 0.5);
+}
+
+@keyframes messageFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-4px);
+    }
+}
+
+
+/* =========================================================
+   MESSAGE TEXT
+========================================================= */
+
+.message-header {
+    display: inline-block;
+
+    font-size: 7px;
+    letter-spacing: 2px;
+
+    color: #c8b6e8;
+}
+
+.message-status {
+    float: right;
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 6px;
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+.message-status span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #c8b6e8;
+
+    box-shadow:
+        0 0 7px #c8b6e8;
+}
+
+.message-line {
+    clear: both;
+
+    width: 100%;
+    height: 1px;
+
+    margin: 7px 0;
+
+    background:
+        rgba(200, 182, 232, 0.15);
+}
+
+.message-label {
+    margin-bottom: 5px;
+
+    font-size: 6px;
+    letter-spacing: 1.5px;
+
+    color: #666;
+}
+
+.message-text {
+    min-height: 28px;
+
+    font-size: 9px;
+    line-height: 1.5;
+
+    letter-spacing: 0.4px;
+
+    color: #aaa;
+
+    animation:
+        messageAppear 0.5s ease;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+.message-cursor {
+    display: inline-block;
+
+    margin-top: 3px;
+
+    color: #c8b6e8;
+
+    animation:
+        cursorBlink 0.8s infinite;
+}
+
+@keyframes cursorBlink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   CENTER HOME DISPLAY
+========================================================= */
+
+.center-display {
+    position: absolute;
+
+    top: 70%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 500px;
+
+    text-align: center;
+}
+
+.center-line {
+    width: 100%;
+    height: 1px;
+
+    margin: 15px 0;
+
+    background:
+        rgba(200, 182, 232, 0.25);
+}
+
+.center-label {
+    font-size: 18px;
+
+    letter-spacing: 5px;
+}
+
+.center-description {
+    margin-top: 10px;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   TYPED CENTER MESSAGE
+========================================================= */
+
+.typed-message {
+    margin-top: 25px;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 6px #ffffff,
+        0 0 15px rgba(200, 182, 232, 0.9),
+        0 0 30px rgba(200, 182, 232, 0.5);
+
+    white-space: nowrap;
+}
+
+.typed-cursor {
+    margin-left: 4px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 8px #ffffff,
+        0 0 15px #c8b6e8;
+
+    animation:
+        typedCursorBlink 0.8s infinite;
+}
+
+@keyframes typedCursorBlink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .hologram-area {
+        width: 650px;
+    }
+
+    .hologram {
+        left: 100px;
+    }
+
+    .robot-message {
+        width: 210px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .system-header {
+        padding: 25px 20px;
+    }
+
+    .system-name {
+        font-size: 22px;
+    }
+
+    .system-status {
+        font-size: 9px;
+    }
+
+    .system-info {
+        left: 20px;
+    }
+
+
+    /* First robot */
+
+    .hologram-area {
+        width: 90%;
+    }
+
+    .hologram {
+        left: 25%;
+    }
+
+    .robot-message {
+        right: 0;
+
+        width: 200px;
+    }
+
+
+    /* Home */
+
+    .center-display {
+        width: 80%;
+    }
+
+    .center-label {
+        font-size: 14px;
+
+        letter-spacing: 3px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .system-header {
+        padding:
+            20px 10px;
+    }
+
+    .system-name {
+        font-size: 18px;
+
+        letter-spacing: 5px;
+    }
+
+    .system-subtitle {
+        font-size: 7px;
+    }
+
+    .system-status {
+        font-size: 7px;
+    }
+
+
+    /* System information */
+
+    .system-info {
+        top: 115px;
+        left: 15px;
+
+        font-size: 7px;
+    }
+
+
+    /* First robot */
+
+    .hologram-area {
+        top: 150px;
+
+        width: 100%;
+    }
+
+    .hologram {
+        left: 20%;
+    }
+
+    .robot-message {
+        right: -20px;
+
+        width: 190px;
+
+        min-height: 85px;
+
+        padding: 10px 11px;
+    }
+
+    .message-text {
+        font-size: 8px;
+
+        line-height: 1.4;
+    }
+
+
+    /* Home center */
+
+    .center-display {
+        top: 72%;
+
+        width: 90%;
+    }
+
+    .center-label {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+    .center-description {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+        .typed-message {
+        font-size: 9px;
+        line-height: 1.8;
+        letter-spacing: 1.5px;
+        white-space: normal;
+    }
+}

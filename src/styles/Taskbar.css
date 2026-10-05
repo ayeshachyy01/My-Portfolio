@@ -1,0 +1,287 @@
+/* =========================================================
+   TASKBAR
+========================================================= */
+
+.taskbar {
+    position: fixed;
+
+    z-index: 1000;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    background:
+        rgba(5, 6, 8, 0.95);
+
+    border-top:
+        1px solid rgba(200, 182, 232, 0.2);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.taskbar-left {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.taskbar-logo {
+    width: 32px;
+    height: 27px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: transparent;
+
+    border:
+        1px solid #c8b6e8;
+
+    color: #c8b6e8;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.taskbar-logo:hover {
+    background: #c8b6e8;
+
+    color: #050608;
+
+    box-shadow:
+        0 0 15px rgba(200, 182, 232, 0.4);
+}
+
+
+/* =========================================================
+   AC MENU
+========================================================= */
+
+.taskbar-menu {
+    position: absolute;
+
+    bottom: 42px;
+    left: 0;
+
+    width: 120px;
+
+    padding: 6px;
+
+    background:
+        rgba(5, 6, 8, 0.98);
+
+    border:
+        1px solid rgba(200, 182, 232, 0.4);
+
+    box-shadow:
+        0 0 20px rgba(200, 182, 232, 0.12);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1001;
+}
+
+
+.taskbar-menu button {
+    width: 100%;
+
+    padding: 10px;
+
+    background: transparent;
+
+    border:
+        1px solid transparent;
+
+    color: #aaa;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.taskbar-menu button:hover {
+    color: #ffffff;
+
+    background:
+        rgba(200, 182, 232, 0.1);
+
+    border-color:
+        #c8b6e8;
+
+    text-shadow:
+        0 0 8px #c8b6e8;
+}
+
+
+/* =========================================================
+   ICON NAVIGATION
+========================================================= */
+
+.taskbar-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.taskbar-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(200, 182, 232, 0.02);
+
+    border:
+        1px solid rgba(200, 182, 232, 0.4);
+
+    color: #c8b6e8;
+
+    text-decoration: none;
+
+    transition:
+        0.2s ease;
+}
+
+
+.taskbar-icon svg {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.taskbar-icon:hover,
+.taskbar-icon:focus {
+    background:
+        rgba(200, 182, 232, 0.12);
+
+    border-color:
+        #c8b6e8;
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 0 10px rgba(200, 182, 232, 0.35);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   CLOCK
+========================================================= */
+
+.taskbar-right {
+    color: #aaa;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .taskbar {
+        padding: 0 15px;
+    }
+
+    .taskbar-nav {
+        gap: 6px;
+    }
+
+    .taskbar-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .taskbar {
+        padding: 0 10px;
+    }
+
+    .taskbar-nav {
+        gap: 4px;
+    }
+
+    .taskbar-logo {
+        width: 30px;
+        height: 26px;
+    }
+
+    .taskbar-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .taskbar-icon svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    .taskbar-right {
+        font-size: 8px;
+    }
+
+}
