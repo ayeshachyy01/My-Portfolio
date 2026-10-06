@@ -12,7 +12,11 @@ import {
     FaEnvelope
 } from 'react-icons/fa';
 
-function Taskbar({ time, onLogout }) {
+function Taskbar({
+    time,
+    onLogout,
+    activeSection
+}) {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -56,7 +60,10 @@ function Taskbar({ time, onLogout }) {
 
                 <a
                     href="#home"
-                    className="taskbar-icon"
+                    className={`taskbar-icon ${activeSection === 'home'
+                        ? 'active'
+                        : ''
+                        }`}
                     title="Home"
                 >
                     <FaHome />
@@ -65,7 +72,10 @@ function Taskbar({ time, onLogout }) {
 
                 <a
                     href="#about"
-                    className="taskbar-icon"
+                    className={`taskbar-icon ${activeSection === 'about'
+                        ? 'active'
+                        : ''
+                        }`}
                     title="About"
                 >
                     <FaUser />
@@ -74,7 +84,10 @@ function Taskbar({ time, onLogout }) {
 
                 <a
                     href="#education"
-                    className="taskbar-icon"
+                    className={`taskbar-icon ${activeSection === 'education'
+                        ? 'active'
+                        : ''
+                        }`}
                     title="Education"
                 >
                     <FaGraduationCap />
@@ -83,7 +96,10 @@ function Taskbar({ time, onLogout }) {
 
                 <a
                     href="#skills"
-                    className="taskbar-icon"
+                    className={`taskbar-icon ${activeSection === 'skills'
+                        ? 'active'
+                        : ''
+                        }`}
                     title="Skills"
                 >
                     <FaCode />
@@ -92,7 +108,10 @@ function Taskbar({ time, onLogout }) {
 
                 <a
                     href="#projects"
-                    className="taskbar-icon"
+                    className={`taskbar-icon ${activeSection === 'projects'
+                        ? 'active'
+                        : ''
+                        }`}
                     title="Projects"
                 >
                     <FaFolderOpen />
@@ -101,7 +120,10 @@ function Taskbar({ time, onLogout }) {
 
                 <a
                     href="#reaction"
-                    className="taskbar-icon"
+                    className={`taskbar-icon ${activeSection === 'reaction'
+                        ? 'active'
+                        : ''
+                        }`}
                     title="System Test"
                 >
                     <FaBolt />
@@ -110,7 +132,10 @@ function Taskbar({ time, onLogout }) {
 
                 <a
                     href="#contact"
-                    className="taskbar-icon"
+                    className={`taskbar-icon ${activeSection === 'contact'
+                        ? 'active'
+                        : ''
+                        }`}
                     title="Contact"
                 >
                     <FaEnvelope />
