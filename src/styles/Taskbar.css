@@ -283,5 +283,25 @@
     .taskbar-right {
         font-size: 8px;
     }
+   @media (hover: none) {
+
+    .taskbar-icon:focus {
+        outline: none;
+        box-shadow: none;
+        background: rgba(200, 182, 232, 0.02);
+        border-color: rgba(200, 182, 232, 0.4);
+        color: #c8b6e8;
+        transform: none;
+    }
+
+    .taskbar-icon.active {
+        background: rgba(200, 182, 232, 0.12);
+        border-color: #c8b6e8;
+        color: #ffffff;
+        box-shadow: 0 0 10px rgba(200, 182, 232, 0.35);
+        transform: translateY(-2px);
+    }
+
+}
 
 }
