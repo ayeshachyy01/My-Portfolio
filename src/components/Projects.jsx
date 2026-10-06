@@ -13,10 +13,9 @@ function Projects({ visibleSections }) {
             className={`
                 os-screen
                 content-screen
-                ${
-                    visibleSections.includes('projects')
-                        ? 'section-visible'
-                        : ''
+                ${visibleSections.includes('projects')
+                    ? 'section-visible'
+                    : ''
                 }
             `}
         >
@@ -108,7 +107,7 @@ function Projects({ visibleSections }) {
                         <div className="project-info">
 
                             <strong>
-                                CHAPTORA — MANHWA & WEBTOON TRACKER
+                                CHAPTORA — MANHWA & MANGA LIBRARY
                             </strong>
 
                             <p className="project-tech">
@@ -116,7 +115,7 @@ function Projects({ visibleSections }) {
                             </p>
 
                             <a
-                                href="https://github.com/ayeshachyy01/Chaptora-Manhwa-Webtoon-Tracker"
+                                href="https://github.com/ayeshachyy01/Chaptora-Manhwa-and-Manga-Library"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="project-link"
