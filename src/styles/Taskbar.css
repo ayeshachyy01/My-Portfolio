@@ -206,7 +206,7 @@
 ========================================================= */
 
 .taskbar-icon:hover,
-.taskbar-icon:focus {
+.taskbar-icon.active {
     background:
         rgba(200, 182, 232, 0.12);
 
