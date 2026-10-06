@@ -182,6 +182,7 @@ function Desktop({ onLogout }) {
     ===================================================== */
 
     const [visibleSections, setVisibleSections] = useState([]);
+    const [activeSection, setActiveSection] = useState('home');
 
 
     /* =====================================================
@@ -378,7 +379,7 @@ function Desktop({ onLogout }) {
     useEffect(() => {
 
         const sections =
-            document.querySelectorAll('.content-screen');
+            document.querySelectorAll('.content-screen, #home');
 
 
         const observer = new IntersectionObserver(
@@ -387,6 +388,7 @@ function Desktop({ onLogout }) {
                 entries.forEach((entry) => {
 
                     if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
 
                         setVisibleSections((current) => {
 
@@ -601,6 +603,7 @@ function Desktop({ onLogout }) {
             <Taskbar
                 time={time}
                 onLogout={onLogout}
+                activeSection={activeSection}
             />
 
 
