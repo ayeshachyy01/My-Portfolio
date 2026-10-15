@@ -1,6 +1,5 @@
-import '../styles/Taskbar.css';
 
-import { useState } from 'react';
+import '../styles/Taskbar.css';
 
 import {
     FaHome,
@@ -12,145 +11,93 @@ import {
     FaEnvelope
 } from 'react-icons/fa';
 
+// create the taskbar component
 function Taskbar({
-    time,
-    onLogout,
     activeSection
 }) {
-
-    const [menuOpen, setMenuOpen] = useState(false);
 
     return (
 
         <div className="taskbar">
 
+            {/* left side of the taskbar */}
             <div className="taskbar-left">
 
-                <button
-                    className="taskbar-logo"
-                    onClick={() => {
-                        setMenuOpen(!menuOpen);
-                    }}
-                >
+                {/* ac logo */}
+                <div className="taskbar-logo">
                     AC
-                </button>
-
-
-                {menuOpen && (
-
-                    <div className="taskbar-menu">
-
-                        <button
-                            onClick={() => {
-                                setMenuOpen(false);
-                                onLogout();
-                            }}
-                        >
-                            LOG OUT
-                        </button>
-
-                    </div>
-
-                )}
+                </div>
 
             </div>
 
 
+            {/* navigation area containing all section icons */}
             <nav className="taskbar-nav">
 
+                {/* home icon */}
                 <a
                     href="#home"
-                    className={`taskbar-icon ${activeSection === 'home'
-                        ? 'active'
-                        : ''
-                        }`}
+                    className={`taskbar-icon ${activeSection === 'home' ? 'active' : ''}`}
                     title="Home"
                 >
                     <FaHome />
                 </a>
 
-
+                {/* about icon */}
                 <a
                     href="#about"
-                    className={`taskbar-icon ${activeSection === 'about'
-                        ? 'active'
-                        : ''
-                        }`}
+                    className={`taskbar-icon ${activeSection === 'about' ? 'active' : ''}`}
                     title="About"
                 >
                     <FaUser />
                 </a>
 
-
+                {/* education icon */}
                 <a
                     href="#education"
-                    className={`taskbar-icon ${activeSection === 'education'
-                        ? 'active'
-                        : ''
-                        }`}
+                    className={`taskbar-icon ${activeSection === 'education' ? 'active' : ''}`}
                     title="Education"
                 >
                     <FaGraduationCap />
                 </a>
 
-
+                {/* skills icon */}
                 <a
                     href="#skills"
-                    className={`taskbar-icon ${activeSection === 'skills'
-                        ? 'active'
-                        : ''
-                        }`}
+                    className={`taskbar-icon ${activeSection === 'skills' ? 'active' : ''}`}
                     title="Skills"
                 >
                     <FaCode />
                 </a>
 
-
+                {/* projects icon */}
                 <a
                     href="#projects"
-                    className={`taskbar-icon ${activeSection === 'projects'
-                        ? 'active'
-                        : ''
-                        }`}
+                    className={`taskbar-icon ${activeSection === 'projects' ? 'active' : ''}`}
                     title="Projects"
                 >
                     <FaFolderOpen />
                 </a>
 
-
+                {/* system test icon */}
                 <a
                     href="#reaction"
-                    className={`taskbar-icon ${activeSection === 'reaction'
-                        ? 'active'
-                        : ''
-                        }`}
+                    className={`taskbar-icon ${activeSection === 'reaction' ? 'active' : ''}`}
                     title="System Test"
                 >
                     <FaBolt />
                 </a>
 
-
+                {/* contact icon */}
                 <a
                     href="#contact"
-                    className={`taskbar-icon ${activeSection === 'contact'
-                        ? 'active'
-                        : ''
-                        }`}
+                    className={`taskbar-icon ${activeSection === 'contact' ? 'active' : ''}`}
                     title="Contact"
                 >
                     <FaEnvelope />
                 </a>
 
             </nav>
-
-
-            <div className="taskbar-right">
-
-                <span>
-                    {time.toLocaleTimeString()}
-                </span>
-
-            </div>
 
         </div>
 
