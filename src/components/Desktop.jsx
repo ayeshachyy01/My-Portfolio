@@ -601,8 +601,6 @@ function Desktop({ onLogout }) {
 
 
             <Taskbar
-                time={time}
-                onLogout={onLogout}
                 activeSection={activeSection}
             />
 
